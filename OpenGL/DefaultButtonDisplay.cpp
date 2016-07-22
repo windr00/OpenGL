@@ -21,7 +21,9 @@ void Delegate::DefultDisplay::DefultButtonDisplay::draw() {
     
 }
 
-Delegate::DefultDisplay::DefultButtonDisplay::DefultButtonDisplay(UI::Vector3 pos, UI::Vector2 size){
+Delegate::DefultDisplay::DefultButtonDisplay::DefultButtonDisplay(UI::Vector3 * pos, UI::Vector2 * size){
     this->setPosition(pos);
+    this->setSize(size);
     
+    this->vertexArray->push_back(UI::Vector3(){});
 }
