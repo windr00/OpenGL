@@ -9,10 +9,12 @@
 #include "DefaultButtonDisplay.hpp"
 
 void Delegate::DefultDisplay::DefultButtonDisplay::draw() {
+
     glBegin(GL_POLYGON);
-    auto array = this->vertexArray;
-    for (int i = 0;i < array->size();i++) {
-        auto point = (*array)[i];
+    auto array = this->getVertexes();
+    glColor3b(127, 0, 0);
+    for (int i = 0;i < array.size();i++) {
+        auto point = array[i];
         glVertex3f(point.x, point.y, point.z);
     }
     
@@ -24,6 +26,8 @@ void Delegate::DefultDisplay::DefultButtonDisplay::draw() {
 Delegate::DefultDisplay::DefultButtonDisplay::DefultButtonDisplay(UI::Vector3 * pos, UI::Vector2 * size){
     this->setPosition(pos);
     this->setSize(size);
-    
-    this->vertexArray->push_back(UI::Vector3(){});
+    this->addVertex({pos->x, pos->y, pos->z});
+    this->addVertex({pos->x + size->x, pos->y, pos->z});
+    this->addVertex({pos->x + size->x, pos->y - size->y, pos->z});
+    this->addVertex({pos->x, pos->y - size->y, pos->z});
 }

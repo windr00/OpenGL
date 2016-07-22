@@ -94,10 +94,7 @@
 		B3B8C12F1D3F29D900A2DC13 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B3B8C11F1D3F23F600A2DC13 /* UIElementBase.cpp */,
-				B3B8C11D1D3F23C100A2DC13 /* Button.hpp */,
-				B3B8C11C1D3F23C100A2DC13 /* Button.cpp */,
-				B3B8C1201D3F23F600A2DC13 /* UIElementBase.hpp */,
+				D638AA5A1D4210490033B757 /* UIElements */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -105,11 +102,8 @@
 		B3B8C1301D3F29FB00A2DC13 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				B3B8C1351D3F61A500A2DC13 /* DefaultDisplay */,
-				B3B8C12C1D3F29C900A2DC13 /* Display.cpp */,
-				B3B8C1221D3F242800A2DC13 /* Event.cpp */,
-				B3B8C1231D3F242800A2DC13 /* Event.hpp */,
-				B3B8C12E1D3F29CE00A2DC13 /* Display.hpp */,
+				D638AA591D4210360033B757 /* EventDelegate */,
+				D638AA581D4210240033B757 /* DisplayDelegate */,
 			);
 			name = Delegate;
 			sourceTree = "<group>";
@@ -130,6 +124,44 @@
 				B3B8C1331D3F534900A2DC13 /* DefaultButtonDisplay.hpp */,
 			);
 			name = DefaultDisplay;
+			sourceTree = "<group>";
+		};
+		D638AA581D4210240033B757 /* DisplayDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				B3B8C12C1D3F29C900A2DC13 /* Display.cpp */,
+				B3B8C12E1D3F29CE00A2DC13 /* Display.hpp */,
+				B3B8C1351D3F61A500A2DC13 /* DefaultDisplay */,
+			);
+			name = DisplayDelegate;
+			sourceTree = "<group>";
+		};
+		D638AA591D4210360033B757 /* EventDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				B3B8C1221D3F242800A2DC13 /* Event.cpp */,
+				B3B8C1231D3F242800A2DC13 /* Event.hpp */,
+			);
+			name = EventDelegate;
+			sourceTree = "<group>";
+		};
+		D638AA5A1D4210490033B757 /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				D638AA5B1D4210540033B757 /* Button */,
+				B3B8C11F1D3F23F600A2DC13 /* UIElementBase.cpp */,
+				B3B8C1201D3F23F600A2DC13 /* UIElementBase.hpp */,
+			);
+			name = UIElements;
+			sourceTree = "<group>";
+		};
+		D638AA5B1D4210540033B757 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				B3B8C11D1D3F23C100A2DC13 /* Button.hpp */,
+				B3B8C11C1D3F23C100A2DC13 /* Button.cpp */,
+			);
+			name = Button;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +347,7 @@
 				B3B8C1151D3F1DFA00A2DC13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

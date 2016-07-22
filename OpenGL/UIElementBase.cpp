@@ -7,3 +7,13 @@
 //
 
 #include "UIElementBase.hpp"
+
+void UI::UIElementBase::callDisplay(){
+    if (displayDelegate != NULL) {
+        displayDelegate->draw();
+    }
+}
+
+UI::UIElementBase::UIElementBase(Delegate::Display  * display) {
+    this->displayDelegate = display;
+}

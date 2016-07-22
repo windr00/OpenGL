@@ -24,6 +24,8 @@ Delegate::Display::Display() {
     this->color->blue = 0;
     
     
+    
+    
 }
 
 Delegate::Display::~Display() {
@@ -68,4 +70,12 @@ void Delegate::Display::setColor(UI::Color3Byte * col) {
 
 const UI::Color3Byte * Delegate::Display::getColor() {
     return this->color;
+}
+
+void Delegate::Display::addVertex(UI::Vector3 point) {
+    this->vertexArray.push_back({point.x, point.y, point.z});
+}
+
+const std::vector<UI::Vector3> Delegate::Display::getVertexes() {
+    return this->vertexArray;
 }

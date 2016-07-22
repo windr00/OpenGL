@@ -8,17 +8,17 @@
 
 #include <iostream>
 #include <GLUT/GLUT.h>
+#include "DefaultButtonDisplay.hpp"
+#include "Button.hpp"
+#include <cstdlib>
+std::vector<UI::UIElementBase * > UIElementList;
 
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
-    glColor3b(127, 0, 0);
-    glBegin(GL_POLYGON);
-    glVertex2f(-0.5, -0.5);
-    glVertex2f(0.5, -0.5);
-    glVertex2f(0.5, 0.5);
-    glVertex2f(-0.5, 0.5);
-    glEnd();
-    glFlush();
+    for (auto item : UIElementList) {
+        item->callDisplay();
+        
+    }
 }
 
 void keyfunc(unsigned char key, int x, int y) {
@@ -29,8 +29,13 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     glutInit(&argc, (char **)argv);
     glutCreateWindow("Xcode OpenGL Test");
+    UI::Vector3 pos = {-0.25,0.25,0};
+    UI::Vector2 size = {0.5,0.5};
+    UI::Button btn(new Delegate::DefultDisplay::DefultButtonDisplay(&pos, &size));
+    UIElementList.push_back(&btn);
     glutDisplayFunc(display);
     glutKeyboardFunc(keyfunc);
+    std::cout<<"Hello World"<<std::endl;
     
     glutMainLoop();
     return 0;

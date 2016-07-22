@@ -20,25 +20,18 @@ namespace UI {
     protected:
         std::list<Delegate::Event> eventList;
         
-        Delegate::Display * displayFunc;
+        Delegate::Display * displayDelegate;
         
         
         
     public:
         
-        void callDisplay(){
-            if (displayFunc != NULL) {
-                displayFunc->display();
-            }
-        }
+        UIElementBase(Delegate::Display * display);
+        
+        void callDisplay();
         
     private:
         
-    ~UIElementBase(){
-        if (displayFunc != NULL) {
-            delete displayFunc;
-        }
-    }
         
     
     };

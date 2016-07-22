@@ -7,3 +7,5 @@
 //
 
 #include "Button.hpp"
+
+UI::Button::Button(Delegate::Display * display) : UI::UIElementBase(display) {}

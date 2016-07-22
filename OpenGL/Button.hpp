@@ -12,10 +12,14 @@
 #include <stdio.h>
 #include "UIElementBase.hpp"
 namespace UI {
-    class Button : protected UI::UIElementBase{
+    
+    class Button : public UI::UIElementBase{
+    
         
         
     public:
+        
+        Button(Delegate::Display * display);
         
         
     };

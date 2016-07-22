@@ -14,7 +14,7 @@
 namespace Delegate {
     namespace DefultDisplay{
         
-        class DefultButtonDisplay : protected Delegate::Display {
+        class DefultButtonDisplay : public Delegate::Display {
         public:
             
             DefultButtonDisplay(UI::Vector3 * pos, UI::Vector2 * size);

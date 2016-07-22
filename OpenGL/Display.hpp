@@ -20,11 +20,10 @@ namespace Delegate {
         UI::Color3Byte * color;
         UI::Vector3 * position;
         UI::Vector2 * size;
-        std::vector<UI::Vector3> * vertexArray;
+        std::vector<UI::Vector3> vertexArray;
         
         Display() ;
         
-        ~Display() ;
         
     public:
         
@@ -40,7 +39,12 @@ namespace Delegate {
         
         const UI::Color3Byte * getColor();
         
+        void addVertex(UI::Vector3 point);
+        
+        const std::vector<UI::Vector3> getVertexes();
+        
         virtual void draw() = 0;
+        ~Display() ;
     };
 }
 
