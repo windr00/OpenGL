@@ -13,7 +13,6 @@
 		B3B8C11E1D3F23C100A2DC13 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B8C11C1D3F23C100A2DC13 /* Button.cpp */; };
 		B3B8C1211D3F23F600A2DC13 /* UIElementBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B8C11F1D3F23F600A2DC13 /* UIElementBase.cpp */; };
 		B3B8C1241D3F242800A2DC13 /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B8C1221D3F242800A2DC13 /* Event.cpp */; };
-		B3B8C12B1D3F28C400A2DC13 /* Defines.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B8C12A1D3F28C400A2DC13 /* Defines.cpp */; };
 		B3B8C12D1D3F29C900A2DC13 /* Display.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B8C12C1D3F29C900A2DC13 /* Display.cpp */; };
 		B3B8C1341D3F534900A2DC13 /* DefaultButtonDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B8C1321D3F534900A2DC13 /* DefaultButtonDisplay.cpp */; };
 		D638AA5E1D4215CE0033B757 /* GlobalEventSchedule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D638AA5C1D4215CE0033B757 /* GlobalEventSchedule.cpp */; };
@@ -43,7 +42,6 @@
 		B3B8C1221D3F242800A2DC13 /* Event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Event.cpp; sourceTree = "<group>"; };
 		B3B8C1231D3F242800A2DC13 /* Event.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Event.hpp; sourceTree = "<group>"; };
 		B3B8C1281D3F27B400A2DC13 /* Defines.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Defines.hpp; sourceTree = "<group>"; };
-		B3B8C12A1D3F28C400A2DC13 /* Defines.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Defines.cpp; sourceTree = "<group>"; };
 		B3B8C12C1D3F29C900A2DC13 /* Display.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Display.cpp; sourceTree = "<group>"; };
 		B3B8C12E1D3F29CE00A2DC13 /* Display.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Display.hpp; sourceTree = "<group>"; };
 		B3B8C1321D3F534900A2DC13 /* DefaultButtonDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DefaultButtonDisplay.cpp; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				B3B8C1281D3F27B400A2DC13 /* Defines.hpp */,
-				B3B8C12A1D3F28C400A2DC13 /* Defines.cpp */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -226,7 +223,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D638AA5E1D4215CE0033B757 /* GlobalEventSchedule.cpp in Sources */,
-				B3B8C12B1D3F28C400A2DC13 /* Defines.cpp in Sources */,
 				B3B8C1241D3F242800A2DC13 /* Event.cpp in Sources */,
 				B3B8C1341D3F534900A2DC13 /* DefaultButtonDisplay.cpp in Sources */,
 				B3B8C12D1D3F29C900A2DC13 /* Display.cpp in Sources */,

@@ -29,21 +29,21 @@ namespace Delegate {
         
         void setPosition( UI::Vector3 *);
         
-        const UI::Vector3 * getPosition();
+        const UI::Vector3 * getPosition() const;
         
         void setSize( UI::Vector2 *);
         
-        const UI::Vector2 * getSize();
+        const UI::Vector2 * getSize() const;
         
         void setColor(UI::Color3Byte * color);
         
-        const UI::Color3Byte * getColor();
+        const UI::Color3Byte * getColor()const;
         
         void addVertex(UI::Vector3 point);
         
-        const std::vector<UI::Vector3> getVertexes();
+        const std::vector<UI::Vector3> getVertexes() const ;
         
-        virtual void draw() = 0;
+        virtual void draw() const = 0;
         ~Display() ;
     };
 }

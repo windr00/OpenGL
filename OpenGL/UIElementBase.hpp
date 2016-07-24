@@ -14,23 +14,31 @@
 #include "Defines.hpp"
 #include "Event.hpp"
 #include "Display.hpp"
+#include "MouseEventDelegate.hpp"
 namespace UI {
 
     class UIElementBase {
     protected:
-        std::list<Delegate::Event> eventList;
+        
         
         Delegate::Display * displayDelegate;
         
         
+        Delegate::EventDelegate * eventHandlers;
+        
+        
+        ~UIElementBase();
         
     public:
         
-        UIElementBase(Delegate::Display * display);
+        UIElementBase(Delegate::Display * display,
+                      Delegate::MouseDownEventHandler mouseDown,
+                      Delegate::MouseUpEventHandler mouseUp,
+                      Delegate::KeyPressEventHandler keyPress);
         
-        void callDisplay();
+        const Delegate::Display * getDisplayDelegate();
         
-    private:
+        const Delegate::EventDelegate * getEventHandlers();
         
         
     

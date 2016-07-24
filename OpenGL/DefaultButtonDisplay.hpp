@@ -19,7 +19,7 @@ namespace Delegate {
             
             DefultButtonDisplay(UI::Vector3 * pos, UI::Vector2 * size);
         
-            virtual void draw() override;
+            virtual void draw() const override;
         };
         
     }

@@ -8,4 +8,4 @@
 
 #include "Button.hpp"
 
-UI::Button::Button(Delegate::Display * display) : UI::UIElementBase(display) {}
+UI::Button::Button(Delegate::Display * display) : UI::UIElementBase(display, NULL, NULL, NULL) {}

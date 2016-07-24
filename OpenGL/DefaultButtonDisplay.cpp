@@ -8,14 +8,15 @@
 
 #include "DefaultButtonDisplay.hpp"
 
-void Delegate::DefultDisplay::DefultButtonDisplay::draw() {
+void Delegate::DefultDisplay::DefultButtonDisplay::draw() const{
 
     glBegin(GL_POLYGON);
-    auto array = this->getVertexes();
+    auto array = getVertexes();
     glColor3b(127, 0, 0);
     for (int i = 0;i < array.size();i++) {
         auto point = array[i];
         glVertex3f(point.x, point.y, point.z);
+        
     }
     
     glEnd();

@@ -49,11 +49,11 @@ void Delegate::Display::setPosition( UI::Vector3 * pos) {
 }
 
 
-const  UI::Vector3 * Delegate::Display::getPosition() {
+const  UI::Vector3 * Delegate::Display::getPosition() const{
     return this->position;
 }
 
-const  UI::Vector2 * Delegate::Display::getSize() {
+const  UI::Vector2 * Delegate::Display::getSize() const{
     return this->size;
 }
 
@@ -68,7 +68,7 @@ void Delegate::Display::setColor(UI::Color3Byte * col) {
     this->color->blue = col->blue;
 }
 
-const UI::Color3Byte * Delegate::Display::getColor() {
+const UI::Color3Byte * Delegate::Display::getColor() const{
     return this->color;
 }
 
@@ -76,6 +76,6 @@ void Delegate::Display::addVertex(UI::Vector3 point) {
     this->vertexArray.push_back({point.x, point.y, point.z});
 }
 
-const std::vector<UI::Vector3> Delegate::Display::getVertexes() {
+const std::vector<UI::Vector3> Delegate::Display::getVertexes() const{
     return this->vertexArray;
 }

@@ -8,12 +8,29 @@
 
 #include "UIElementBase.hpp"
 
-void UI::UIElementBase::callDisplay(){
-    if (displayDelegate != NULL) {
-        displayDelegate->draw();
-    }
+const Delegate::Display *  UI::UIElementBase::getDisplayDelegate(){
+    return this->displayDelegate;
 }
 
-UI::UIElementBase::UIElementBase(Delegate::Display  * display) {
+UI::UIElementBase::UIElementBase(Delegate::Display  * display,
+                                 Delegate::MouseDownEventHandler mouseDown,
+                                 Delegate::MouseUpEventHandler mouseUp,
+                                 Delegate::KeyPressEventHandler keyPress) {
     this->displayDelegate = display;
+    
+    this->eventHandlers = new Delegate::EventDelegate();
+    
+    this->eventHandlers->setMouseDownHandler(mouseDown);
+    
+    this->eventHandlers->setMouseUpHandler(mouseUp);
+    
+    this->eventHandlers->setKeyPressHandler(keyPress);
+}
+
+UI::UIElementBase::~UIElementBase() {
+    delete this->eventHandlers;
+}
+
+const Delegate::EventDelegate * UI::UIElementBase::getEventHandlers() {
+    return this->eventHandlers;
 }

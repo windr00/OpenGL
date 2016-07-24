@@ -9,12 +9,6 @@
 #ifndef Defines_h
 #define Defines_h
 
-namespace Delegate {
-    enum BUTTON_EVENT_TYPE {
-        ONCLICK = 0,
-        ONDRAG ,
-    };
-}
 
 namespace UI{
     
@@ -35,7 +29,28 @@ namespace UI{
         float z;
     }Vector3;
     
-    void displayButton();
 }
+
+namespace Delegate {
+    enum BUTTON_EVENT_TYPE {
+        ONCLICK = 0,
+        ONDRAG ,
+    };
+    
+    enum MOUSE_BUTTON {
+        LEFT = 0,
+        MIDDLE = 1,
+        RIGHT = 2,
+    };
+    
+    
+    typedef void (*MouseDownEventHandler) (Delegate::MOUSE_BUTTON mouseButton, UI::Vector2 mousePosition);
+    
+    typedef void (*MouseUpEventHandler)(Delegate::MOUSE_BUTTON mouseButton, UI::Vector2 mousePosition);
+    
+    
+    typedef void (*KeyPressEventHandler) (unsigned char key, UI::Vector2 mousePosition);
+}
+
 
 #endif /* Defines_h */
