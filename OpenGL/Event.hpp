@@ -9,20 +9,28 @@
 #ifndef Event_hpp
 #define Event_hpp
 
-#include <stdio.h>
+#include <iostream>
 #include "Defines.hpp"
+#include "UIElementBase.hpp"
 namespace Delegate {
-    class EventDelegate {
+    
+        class EventDelegate {
         
     private:
         
-        Delegate::MouseDownEventHandler mouseDown;
+        MouseDownEventHandler mouseDown;
         
-        Delegate::MouseUpEventHandler mouseUp;
+        MouseUpEventHandler mouseUp;
     
-        Delegate::KeyPressEventHandler keyPress;
+        KeyPressEventHandler keyPress;
+            
+        MouseDownMotionHandler mouseDownMotion;
+        
+        UI::UIElementBase * UIInstance;
         
     public:
+        
+        EventDelegate(UI::UIElementBase * instance);
         
         void setMouseDownHandler(Delegate:: MouseDownEventHandler);
         
@@ -31,6 +39,8 @@ namespace Delegate {
         
         
         void setKeyPressHandler(Delegate::KeyPressEventHandler);
+            
+        void setMouseDownMotionHandler(Delegate::MouseDownMotionHandler);
         
         
         void invokeMouseDownHandler(Delegate::MOUSE_BUTTON button, UI::Vector2 pos) const;
@@ -38,6 +48,8 @@ namespace Delegate {
         void invokeMouseUpHandler(Delegate::MOUSE_BUTTON button, UI::Vector2 pos) const ;
         
         void invokeKeyPressHandler(unsigned char key, UI::Vector2 pos)  const;
+            
+        void invokeMouseDownMotinoHandler(UI::Vector2 mousePos) const;
     };
 }
 

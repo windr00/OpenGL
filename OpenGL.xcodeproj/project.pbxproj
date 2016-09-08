@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B30DB4131D48B3C30083FF24 /* TextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B30DB4111D48B3C30083FF24 /* TextBox.cpp */; };
+		B30DB4171D48B5080083FF24 /* DefaultTextBoxDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B30DB4151D48B5080083FF24 /* DefaultTextBoxDisplay.cpp */; };
 		B3B8C1101D3F1DFA00A2DC13 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B8C10F1D3F1DFA00A2DC13 /* main.cpp */; };
 		B3B8C1191D3F1F8200A2DC13 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B8C1181D3F1F8200A2DC13 /* GLUT.framework */; };
 		B3B8C11B1D3F1F8700A2DC13 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B8C11A1D3F1F8700A2DC13 /* OpenGL.framework */; };
@@ -31,6 +33,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B30DB4111D48B3C30083FF24 /* TextBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextBox.cpp; sourceTree = "<group>"; };
+		B30DB4121D48B3C30083FF24 /* TextBox.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TextBox.hpp; sourceTree = "<group>"; };
+		B30DB4151D48B5080083FF24 /* DefaultTextBoxDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DefaultTextBoxDisplay.cpp; sourceTree = "<group>"; };
+		B30DB4161D48B5080083FF24 /* DefaultTextBoxDisplay.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DefaultTextBoxDisplay.hpp; sourceTree = "<group>"; };
 		B3B8C10C1D3F1DFA00A2DC13 /* OpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B8C10F1D3F1DFA00A2DC13 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B3B8C1181D3F1F8200A2DC13 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
@@ -63,6 +69,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B30DB4101D48B3A40083FF24 /* TextBox */ = {
+			isa = PBXGroup;
+			children = (
+				B30DB4111D48B3C30083FF24 /* TextBox.cpp */,
+				B30DB4121D48B3C30083FF24 /* TextBox.hpp */,
+			);
+			name = TextBox;
+			sourceTree = "<group>";
+		};
 		B3B8C1031D3F1DFA00A2DC13 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +137,8 @@
 			children = (
 				B3B8C1321D3F534900A2DC13 /* DefaultButtonDisplay.cpp */,
 				B3B8C1331D3F534900A2DC13 /* DefaultButtonDisplay.hpp */,
+				B30DB4151D48B5080083FF24 /* DefaultTextBoxDisplay.cpp */,
+				B30DB4161D48B5080083FF24 /* DefaultTextBoxDisplay.hpp */,
 			);
 			name = DefaultDisplay;
 			sourceTree = "<group>";
@@ -150,6 +167,7 @@
 		D638AA5A1D4210490033B757 /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
+				B30DB4101D48B3A40083FF24 /* TextBox */,
 				D638AA5B1D4210540033B757 /* Button */,
 				B3B8C11F1D3F23F600A2DC13 /* UIElementBase.cpp */,
 				B3B8C1201D3F23F600A2DC13 /* UIElementBase.hpp */,
@@ -223,7 +241,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D638AA5E1D4215CE0033B757 /* GlobalEventSchedule.cpp in Sources */,
+				B30DB4171D48B5080083FF24 /* DefaultTextBoxDisplay.cpp in Sources */,
 				B3B8C1241D3F242800A2DC13 /* Event.cpp in Sources */,
+				B30DB4131D48B3C30083FF24 /* TextBox.cpp in Sources */,
 				B3B8C1341D3F534900A2DC13 /* DefaultButtonDisplay.cpp in Sources */,
 				B3B8C12D1D3F29C900A2DC13 /* Display.cpp in Sources */,
 				B3B8C1101D3F1DFA00A2DC13 /* main.cpp in Sources */,

@@ -7,24 +7,24 @@
 //
 
 #include "UIElementBase.hpp"
-
+#include "Event.hpp"
 const Delegate::Display *  UI::UIElementBase::getDisplayDelegate(){
     return this->displayDelegate;
 }
 
 UI::UIElementBase::UIElementBase(Delegate::Display  * display,
-                                 Delegate::MouseDownEventHandler mouseDown,
-                                 Delegate::MouseUpEventHandler mouseUp,
-                                 Delegate::KeyPressEventHandler keyPress) {
+                                 Delegate::EventHandlers handlers) {
     this->displayDelegate = display;
     
-    this->eventHandlers = new Delegate::EventDelegate();
+    this->eventHandlers = new Delegate::EventDelegate(this);
     
-    this->eventHandlers->setMouseDownHandler(mouseDown);
+    this->eventHandlers->setMouseDownHandler(handlers.mouseDown);
     
-    this->eventHandlers->setMouseUpHandler(mouseUp);
+    this->eventHandlers->setMouseUpHandler(handlers.mouseUp);
     
-    this->eventHandlers->setKeyPressHandler(keyPress);
+    this->eventHandlers->setKeyPressHandler(handlers.keyPress);
+    
+    this->eventHandlers->setMouseDownMotionHandler(handlers.mouseDownMotion);
 }
 
 UI::UIElementBase::~UIElementBase() {

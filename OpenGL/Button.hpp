@@ -11,11 +11,24 @@
 
 #include <stdio.h>
 #include "UIElementBase.hpp"
+#include "Defines.hpp"
 namespace UI {
     
     class Button : public UI::UIElementBase{
     
+    private:
         
+        bool isLeftMosueButton = false;
+        
+        UI::Vector2 lastMousePosition;
+        
+        void keyPressHandler(unsigned char c, UI::Vector2 mousePos);
+        
+        void mouseDownHandler(Delegate::MOUSE_BUTTON button, UI::Vector2 mousePos);
+        
+        void mouseUpHandler(Delegate::MOUSE_BUTTON button, UI::Vector2 mousePos);
+        
+        void mouseMotionHandler(UI::Vector2 mouseMotion);
         
     public:
         

@@ -27,15 +27,15 @@ namespace Delegate {
         
     public:
         
-        void setPosition( UI::Vector3 *);
+        void setPosition( UI::Vector3);
         
         const UI::Vector3 * getPosition() const;
         
-        void setSize( UI::Vector2 *);
+        void setSize( UI::Vector2);
         
         const UI::Vector2 * getSize() const;
         
-        void setColor(UI::Color3Byte * color);
+        void setColor(UI::Color3Byte color);
         
         const UI::Color3Byte * getColor()const;
         

@@ -12,13 +12,12 @@
 #include <iostream>
 #include <vector>
 #include "UIElementBase.hpp"
-#include <GLUT/GLUT.h>
 namespace Delegate {
     class GlobalEventSchedule {
         
     private:
         
-        int selectedIndex;
+        int selectedIndex = -1;
         
         std::vector<UI::UIElementBase * > UIElementList;
         
@@ -29,6 +28,8 @@ namespace Delegate {
         void KeyBoardEventHandler(unsigned char c, int x, int y);
         
         void MouseEventHandler(int button, int state, int x, int y);
+        
+        void MouseDownMotionHandler(int x, int y);
         
         void DisplayTriggerEventHandler();
         

@@ -40,11 +40,16 @@ Delegate::Display::~Display() {
     }
 }
 
-void Delegate::Display::setPosition( UI::Vector3 * pos) {
-    this->position->x = pos->x;
-    this->position->y = pos->y;
-    this->position->z = pos->z;
-    
+void Delegate::Display::setPosition( UI::Vector3 pos) {
+    this->position->x = pos.x;
+    this->position->y = pos.y;
+    this->position->z = pos.z;
+    this->vertexArray.clear();
+    this->addVertex({pos.x, pos.y, pos.z});
+    this->addVertex({pos.x + size->x, pos.y, pos.z});
+    this->addVertex({pos.x + size->x, pos.y + size->y, pos.z});
+    this->addVertex({pos.x, pos.y + size->y, pos.z});
+
     
 }
 
@@ -57,15 +62,15 @@ const  UI::Vector2 * Delegate::Display::getSize() const{
     return this->size;
 }
 
-void Delegate::Display::setSize( UI::Vector2 * size) {
-    this->size->x = size->x;
-    this->size->y = size->y;
+void Delegate::Display::setSize( UI::Vector2 size) {
+    this->size->x = size.x;
+    this->size->y = size.y;
 }
 
-void Delegate::Display::setColor(UI::Color3Byte * col) {
-    this->color->red = col->red;
-    this->color->green = col->green;
-    this->color->blue = col->blue;
+void Delegate::Display::setColor(UI::Color3Byte col) {
+    this->color->red = col.red;
+    this->color->green = col.green;
+    this->color->blue = col.blue;
 }
 
 const UI::Color3Byte * Delegate::Display::getColor() const{

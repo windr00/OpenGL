@@ -9,13 +9,12 @@
 #ifndef Defines_h
 #define Defines_h
 
-
 namespace UI{
     
     typedef struct  {
-        char red;
-        char green;
-        char blue;
+        __int8_t red;
+        __int8_t green;
+        __int8_t blue;
     }Color3Byte;
     
     typedef struct  {
@@ -31,6 +30,7 @@ namespace UI{
     
 }
 
+
 namespace Delegate {
     enum BUTTON_EVENT_TYPE {
         ONCLICK = 0,
@@ -44,12 +44,6 @@ namespace Delegate {
     };
     
     
-    typedef void (*MouseDownEventHandler) (Delegate::MOUSE_BUTTON mouseButton, UI::Vector2 mousePosition);
-    
-    typedef void (*MouseUpEventHandler)(Delegate::MOUSE_BUTTON mouseButton, UI::Vector2 mousePosition);
-    
-    
-    typedef void (*KeyPressEventHandler) (unsigned char key, UI::Vector2 mousePosition);
 }
 
 

@@ -19,34 +19,23 @@ int width = 400;
 int height = 300;
 
 void display() {
+    glClearColor(236.0/255, 236.0/255, 236.0/255,1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
     handler->DisplayTriggerEventHandler();
+    glFlush();
 }
 
 void keyfunc(unsigned char key, int x, int y) {
     handler->KeyBoardEventHandler(key, x, y);
+    glutPostRedisplay();
 }
 
 void mousefunc(int button, int state, int x, int y) {
     handler->MouseEventHandler(button, state, x, y);
+    glutPostRedisplay();
 }
 
 void reshapefunc(int w, int h) {
-    /*float ratio = 1.0* w / h;
-    
-    // 单位化投影矩阵。
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    
-    // 设置视口大小为增个窗口大小
-    glViewport(0, 0, w, h);
-    
-    // 设置正确的投影矩阵
-    gluPerspective(45,ratio,1,1000);
-    //下面是设置模型视图矩阵
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-    gluLookAt(0.0,0.0,5.0, 0.0,0.0,-1.0,0.0f,1.0f,0.0f);
-    */
     
     glViewport(0,0,(GLsizei)w,(GLsizei)h);
     
@@ -54,21 +43,34 @@ void reshapefunc(int w, int h) {
     
     glLoadIdentity();
     
+    glMatrixMode(GL_MODELVIEW);
+    
+    glLoadIdentity();
+    
     glOrtho(0, w, h,0, -10, 10);
 
 }
 
+void motion(int x, int y) {
+    // std::cout<<"Motion :"<<x<<","<<y<<std::endl;
+    
+    handler->MouseDownMotionHandler(x, y);
+    glutPostRedisplay();
+}
+
 void test() {
     
-    UI::Vector3 pos = {100,100,0};
-    UI::Vector2 size = {50,50};
-    UI::Button * btn = new UI::Button(new Delegate::DefultDisplay::DefultButtonDisplay(&pos, &size));
+    UI::Vector3 pos = {200,200,0};
+    UI::Vector2 size = {80,40};
+    UI::Button * btn = new UI::Button(new Delegate::DefultDisplay::DefultButtonDisplay(pos, size));
     handler->UIElementApendEventHandler(btn);
 }
+
 
 int main(int argc, const char * argv[]) {
     glutInit(&argc, (char **)argv);
     glutInitWindowSize(width, height);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutCreateWindow("Xcode OpenGL Test");
     handler = Delegate::GlobalEventSchedule::getInstance();
     test();
@@ -76,8 +78,7 @@ int main(int argc, const char * argv[]) {
     glutKeyboardFunc(keyfunc);
     glutMouseFunc(mousefunc);
     glutReshapeFunc(reshapefunc);
-    std::cout<<"Hello World"<<std::endl;
-    
+    glutMotionFunc(motion);
     glutMainLoop();
     return 0;
 }

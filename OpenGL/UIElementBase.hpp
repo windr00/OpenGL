@@ -9,12 +9,41 @@
 #ifndef UIElementBase_hpp
 #define UIElementBase_hpp
 
-#include <stdio.h>
+#include <iostream>
 #include <list>
 #include "Defines.hpp"
-#include "Event.hpp"
 #include "Display.hpp"
-#include "MouseEventDelegate.hpp"
+namespace  UI {
+    class UIElementBase;
+}
+
+namespace Delegate {
+    
+    class EventDelegate;
+    
+    typedef void (UI::UIElementBase:: *MouseDownEventHandler) (Delegate::MOUSE_BUTTON mouseButton, UI::Vector2 mousePosition);
+    
+    typedef void (UI::UIElementBase:: *MouseUpEventHandler)(Delegate::MOUSE_BUTTON mouseButton, UI::Vector2 mousePosition);
+    
+    
+    typedef void (UI::UIElementBase:: *KeyPressEventHandler) (unsigned char key, UI::Vector2 mousePosition);
+    
+    typedef void (UI::UIElementBase:: * MouseDownMotionHandler) (UI::Vector2 mousePosDelta);
+    
+     typedef struct
+    {
+        MouseDownEventHandler mouseDown;
+        MouseUpEventHandler mouseUp;
+        
+        KeyPressEventHandler keyPress;
+        
+        MouseDownMotionHandler mouseDownMotion;
+    
+    }EventHandlers;
+    
+
+}
+
 namespace UI {
 
     class UIElementBase {
@@ -32,9 +61,7 @@ namespace UI {
     public:
         
         UIElementBase(Delegate::Display * display,
-                      Delegate::MouseDownEventHandler mouseDown,
-                      Delegate::MouseUpEventHandler mouseUp,
-                      Delegate::KeyPressEventHandler keyPress);
+                      Delegate::EventHandlers handlers);
         
         const Delegate::Display * getDisplayDelegate();
         
